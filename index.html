@@ -54,24 +54,24 @@
             
         </div>
         <div class="nav-links">
-            <div class="nav-link active" onclick="route('dash', event)">Dashboard</div>
-            <div class="nav-link" onclick="route('nodes', event)">Clusters</div>
-            <div class="nav-link" onclick="route('audit', event)">Audit Logs</div>
+            <div class="nav-link active" tabindex="0" onclick="route('dash', event)">Dashboard</div>
+            <div class="nav-link" tabindex="0" onclick="route('nodes', event)">Clusters</div>
+            <div class="nav-link" tabindex="0" onclick="route('audit', event)">Audit Logs</div>
         </div>
         <div style="padding: 2rem;">
-            <button class="btn" style="background: #1e293b; width: 40px; height: 40px;" onclick="location.reload()" aria-label="Reload">
+            <button class="btn" style="background: #1e293b; width: 40px; height: 40px;" tabindex="0" onclick="location.reload()" aria-label="Reload">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M23 4v6h-6M1 20v-6h6M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"></path>
                 </svg>
             </button>
         </div>
-        <div id="phantom-trigger"data-alpha="X23" data-beta="YZ" data-gamma="42" style="opacity:0;width:5px;height:5px;position:absolute;" onclick="revealPhantom()"></div>
+        <div id="phantom-trigger"data-alpha="X23" data-beta="YZ" data-gamma="42" style="opacity:0;width:5px;height:5px;position:absolute;" tabindex="0" onclick="revealPhantom()"></div>
     </aside>
     <main id="viewport"></main>
 
     <div id="modal-deploy" class="modal-overlay">
         <div class="modal-content">
-            <span class="close-trigger" onclick="closeAll()">×</span>
+            <span class="close-trigger" tabindex="0" onclick="closeAll()">×</span>
             <div id="p-step-1" class="step-panel active">
                 <h2>Provision New Cluster</h2>
                 <div class="form-group">
@@ -82,7 +82,7 @@
                     </select>
                 </div>
                 <img src="https://placehold.co/400x100/e2e8f0/475569?text=Visual+Load+Balance+Map" alt="Visual Load Balance Map">
-                <div class="btn btn-primary" onclick="showStep('p', 2)" style="margin-top:10px;">Next Phase</div>
+                <div class="btn btn-primary" tabindex="0" onclick="showStep('p', 2)" style="margin-top:10px;">Next Phase</div>
             </div>
             <div id="p-step-2" class="step-panel">
                 <h3>Resource Mapping</h3>
@@ -90,14 +90,14 @@
                     <label for= "shard">Shard ID </label>
                     <input id= "shard" type="text" placeholder="Shard ID">
                 </div>
-                <button class="btn btn-primary" onclick="finish('Deployment')">Execute</button>
+                <button class="btn btn-primary" tabindex="0" onclick="finish('Deployment')">Execute</button>
             </div>
         </div>
     </div>
 
     <div id="modal-access" class="modal-overlay">
         <div class="modal-content">
-            <span class="close-trigger" onclick="closeAll()">×</span>
+            <span class="close-trigger" tabindex="0" onclick="closeAll()">×</span>
             <h3>Identity Access Request</h3>
             <div style="margin-bottom: 1rem; display: flex; align-items: center; gap: 10px;">
                 <input type="checkbox" id="elevated-root" name="elevated-root">
@@ -112,15 +112,15 @@
                 <label for="f-token">Token</label>
                 <input type="text" id="f-token">
             </div>
-            <button class="btn btn-primary" onclick="finish('Request')">Submit</button>
+            <button class="btn btn-primary" tabindex="0" onclick="finish('Request')">Submit</button>
         </div>
     </div>
 
     <div id="modal-export" class="modal-overlay">
         <div class="modal-content">
-            <span class="close-trigger" onclick="closeAll()">×</span>
+            <span class="close-trigger" tabindex="0" onclick="closeAll()">×</span>
             <h3>System Snapshot</h3>
-            <a href="javascript:void(0)" onclick="openEgg()">Further information on system snapshot</a>
+            <a href="javascript:void(0)" tabindex="0" onclick="openEgg()">Further information on system snapshot</a>
             <div style="height: 8px; background: #f1f5f9; border-radius: 4px; margin: 2rem 0;">
                 <div style="width: 75%; height: 100%; background: var(--nexus-blue);"></div>
             </div>
@@ -131,7 +131,7 @@
 
     <div id="phantom-modal" class="modal-overlay">
         <div class="modal-content">
-            <span class="close-trigger" onclick="closeAll()">×</span>
+            <span class="close-trigger" tabindex="0" onclick="closeAll()">×</span>
             <h3>Transmission Received</h3>
             <p>Unexpected anomaly detected. Enjoy this:</p>
             <a href="https://youtu.be/btPJPFnesV4?si=ei5KahPv9EPxbZNj" target="_blank">Watch the video</a>
@@ -140,7 +140,7 @@
 
     <div id="modal-service" class="modal-overlay">
     <div class="modal-content">
-        <span class="close-trigger" onclick="closeAll()">×</span>
+        <span class="close-trigger" tabindex="0" onclick="closeAll()">×</span>
         <h3>Create Service Account</h3>
 
         <div id="sa-step-1" class="step-panel active">
@@ -148,7 +148,7 @@
             <input type="text" name="sa-name" id="sa-name" placeholder="Service account name">
             <label for="sa-owner">sa -owner</label>
             <input type="text" id="sa-owner" name="sa-owner" placeholder="Owner team">
-            <div class="btn btn-primary" onclick="showStep('sa', 2)">Next</div>
+            <div class="btn btn-primary" tabindex="0" onclick="showStep('sa', 2)">Next</div>
         </div>
 
         <div id="sa-step-2" class="step-panel">
@@ -160,7 +160,7 @@
                 <option>Administrator</option>
             </select>
             <div style="margin-top:1rem;">
-                <div class="btn btn-primary" onclick="showStep('sa', 3)">Continue</div>
+                <div class="btn btn-primary" tabindex="0" onclick="showStep('sa', 3)">Continue</div>
             </div>
         </div>
 
@@ -176,7 +176,7 @@
                 <strong>Permission:</strong> <span id="sa-review-permission"></span>
             </div>
             <div style="color:var(--error-red); font-size:0.8rem;">Configuration validation failed</div>
-            <div class="btn btn-primary" onclick="finish('Service Account')">Create Account</div>
+            <div class="btn btn-primary" tabindex="0" onclick="finish('Service Account')">Create Account</div>
         </div>
     </div>
 </div>
