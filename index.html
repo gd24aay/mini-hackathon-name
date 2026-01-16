@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<HTML lang="en">
 <html>
 <head>
     <meta charset="UTF-8">
@@ -9,8 +10,8 @@
             --nexus-blue: #2563eb;
             --sidebar-bg: #0f172a;
             --text-muted: #94a3b8;
-            --status-active: #86efac;
-            --nav-inactive: #64748b;
+            --status-active: #0d7b35;
+            --nav-inactive: #d7dbdf;
             --error-red: #f87171;
         }
         *:focus { outline: none !important; }
@@ -45,7 +46,7 @@
     <aside>
         <div class="brand">NEXUS_CONTROL</div>
         <div style="padding: 1rem 2rem;">
-            <input type="text" placeholder="Search clusters...">
+            <input type="text" aria-label="Search clusters" placeholder="Search clusters...">
         </div>
         <div class="nav-links">
             <div class="nav-link active" onclick="route('dash', event)">Dashboard</div>
