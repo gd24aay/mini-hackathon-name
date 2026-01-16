@@ -42,19 +42,16 @@
 </head>
 <body>
     <a href="#nexus-link" class="skip-link">Skip to Content</a>
+    <main id="nexus-link"tabindex="-1">
+    </main>
     <div id="app-root">
     <aside>
         <div class="brand">NEXUS_CONTROL</div>
         <div style="padding: 1rem 2rem;">
-<<<<<<< Updated upstream
-            <input type="text" aria-label="Search clusters" placeholder="Search clusters...">
-=======
             <form>
-                <label for ="search"> Search clusters</label>
-                <input id="search" type="text" placeholder="Search clusters...">
+                <input id="search" type="text" aria-label="Search clusters" placeholder="Search clusters...">
             </form>
             
->>>>>>> Stashed changes
         </div>
         <div class="nav-links">
             <div class="nav-link active" onclick="route('dash', event)">Dashboard</div>
@@ -76,14 +73,15 @@
         <div class="modal-content">
             <span class="close-trigger" onclick="closeAll()">×</span>
             <div id="p-step-1" class="step-panel active">
-                <h3>Provision New Cluster</h3>
+                <h2>Provision New Cluster</h2>
                 <div class="form-group">
-                    <select>
+                    <select id="Data center selection">
+                        <label for="Data center selection">Please select your data center here</label>
                         <option value="">-- Choose Data Center --</option>
                         <option>US-EAST-1</option>
                     </select>
                 </div>
-                <img src="https://placehold.co/400x100/e2e8f0/475569?text=Visual+Load+Balance+Map">
+                <img src="https://placehold.co/400x100/e2e8f0/475569?text=Visual+Load+Balance+Map" alt="Visual Load Balance Map">
                 <div class="btn btn-primary" onclick="showStep('p', 2)" style="margin-top:10px;">Next Phase</div>
             </div>
             <div id="p-step-2" class="step-panel">
@@ -122,7 +120,7 @@
         <div class="modal-content">
             <span class="close-trigger" onclick="closeAll()">×</span>
             <h3>System Snapshot</h3>
-            <a href="javascript:void(0)" onclick="openEgg()">Click here for details</a>
+            <a href="javascript:void(0)" onclick="openEgg()">Further information on system snapshot</a>
             <div style="height: 8px; background: #f1f5f9; border-radius: 4px; margin: 2rem 0;">
                 <div style="width: 75%; height: 100%; background: var(--nexus-blue);"></div>
             </div>
@@ -156,6 +154,7 @@
         <div id="sa-step-2" class="step-panel">
             <p style="font-size:0.85rem;">Select permission level</p>
             <select id="sa-permission">
+                <label for="sa-permission">Select permission level</label>
                 <option>Read Only</option>
                 <option>Read / Write</option>
                 <option>Administrator</option>
@@ -186,10 +185,10 @@
     <script>
         const views = {
             dash: `
-                <h2>Dashboard</h2>
+                <h1>Dashboard</h1>
                 <div class="card">
                     <button class="btn btn-primary" onclick="openModal('deploy')">+ Deploy Node</button>
-                    <table class="nexus-table" style="margin-top: 20px;">
+                    <table class="nexus-table" style="margin-top: 20px;"> <th>Node List</th>
                         <tr><td>Node_Key</td><td>Zone</td><td>Status</td></tr>
                         <tr><td>ALPHA-01</td><td>US-East</td><td style="color: var(--status-active)">Online</td></tr>
                     </table>
